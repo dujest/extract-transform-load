@@ -4,7 +4,7 @@ from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 import pandas as pd
 import numpy as np
 
-def extract_transfor_load(db_params: Dict[str, Union[str, int]],                        
+def extract_transform_load(db_params: Dict[str, Union[str, int]],                        
                           file_path: str,
                           table_name: str,
                           create_database: bool = False,

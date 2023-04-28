@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
 import os
-from etl import extract_transfor_load
+from etl import extract_transform_load
 
 load_dotenv()
 
@@ -14,9 +14,9 @@ db_params = {
 
 excel_file_path = './SpaceNK_2.0.xlsx'
 table_name = 'sales_data'
-new_db_name = 'sales_db_new'
+new_db_name = 'sales_db'
 
-extract_transfor_load(
+extract_transform_load(
     db_params,
     file_path=excel_file_path,
     table_name=table_name,
