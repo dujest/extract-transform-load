@@ -50,8 +50,8 @@ def extract_transform_load(db_params: Dict[str, Union[str, int]],
     df = df.iloc[:-1]
 
     df = df.replace(np.nan, None)
-
-    columns = ["_" + "".join(s.strip().rstrip("%").split()) for s in df.columns.tolist()]
+    
+    columns = ["_".join(s.strip().rstrip("%").split()) for s in df.columns.tolist()]
 
     cur.execute(f'DROP TABLE IF EXISTS {table_name};')
 
