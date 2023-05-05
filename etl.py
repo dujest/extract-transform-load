@@ -45,9 +45,9 @@ def extract_transform_load(db_params: Dict[str, Union[str, int]],
 
     cur = conn.cursor()
 
-    df = pd.read_excel(file_path, sheet_name=0, header=5, usecols=lambda column: column.strip() not in ['', 'Unnamed: 4'])
+    df = pd.read_excel(file_path, sheet_name=0, header=5, usecols=lambda column: column.strip(' 0123456789') not in ['', 'Unnamed:'])
 
-    df = df.iloc[:-1, 2:]
+    df = df.iloc[:-1]
 
     df = df.replace(np.nan, None)
 
